@@ -292,13 +292,11 @@ fn test_assorted_2() {
 
     assert_eq!(data_reply.count(), 3);
 
-    if let StreamPendingReply::Data(data) = data_reply {
+    if let StreamPendingReply::Pending(data) = data_reply {
         assert_eq!(data.start_id, "1000-1");
         assert_eq!(data.end_id, "1001-1");
         assert_eq!(data.consumers.len(), 1);
         assert_eq!(data.consumers[0].name, "c99");
-    } else {
-        panic!("Expected StreamPendingReply::Data but got Empty");
     }
 
     // both count variations have the same reply types
@@ -363,7 +361,7 @@ fn test_xclaim() {
     // grab all pending ids for this key...
     // we should 9 in c1 and 1 in c2
     let reply: StreamPendingReply = con.xpending("k1", "g1").unwrap();
-    if let StreamPendingReply::Data(data) = reply {
+    if let StreamPendingReply::Pending(data) = reply {
         assert_eq!(data.consumers[0].name, "c1");
         assert_eq!(data.consumers[0].pending, 9);
         assert_eq!(data.consumers[1].name, "c2");
@@ -388,7 +386,7 @@ fn test_xclaim() {
 
     let reply: StreamPendingReply = con.xpending("k1", "g1").unwrap();
     // we should have 9 w/ c1 and 1 w/ c3 now
-    if let StreamPendingReply::Data(data) = reply {
+    if let StreamPendingReply::Pending(data) = reply {
         assert_eq!(data.consumers[1].name, "c3");
         assert_eq!(data.consumers[1].pending, 1);
     }
