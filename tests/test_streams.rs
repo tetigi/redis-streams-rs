@@ -1,5 +1,5 @@
-extern crate redis;
-extern crate redis_streams;
+use redis;
+
 
 use redis::{Connection, RedisResult, ToRedisArgs};
 

@@ -4,8 +4,8 @@
 
 #![allow(dead_code)]
 
-extern crate net2;
-extern crate rand;
+use net2;
+use rand;
 
 use redis;
 
