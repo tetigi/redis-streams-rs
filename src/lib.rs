@@ -14,7 +14,6 @@
 //! From here, just unlock the streaming commands prior to instantiating client connections.
 //!
 //! ```no_run
-//! extern crate redis_streams;
 //! use redis_streams::{client_open,Connection,StreamCommands};
 //! let client = client_open("redis://127.0.0.1/0").unwrap();
 //! let mut con = client.get_connection().unwrap();
@@ -24,19 +23,16 @@
 //! To pick up all `redis-rs` Commands, just use the `Commands` trait.
 //!
 //! ```no_run
-//! extern crate redis_streams;
 //! use redis_streams::{Commands};
 //! ```
 //!
 #![deny(non_camel_case_types)]
 
-extern crate redis;
-
 pub use redis::*;
 
-pub use commands::StreamCommands;
+pub use crate::commands::StreamCommands;
 
-pub use types::{
+pub use crate::types::{
     // stream types
     StreamClaimOptions,
     StreamClaimReply,

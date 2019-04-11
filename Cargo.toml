@@ -5,7 +5,8 @@ authors = ["grippy <gmelton@gmail.com>"]
 edition = "2018"
 
 [dependencies.redis]
-path = "../redis-rs"
+git = "ssh://git@github.com/mitsuhiko/redis-rs.git"
+rev = "1a6bf195ed21b84354b9237f720ab11967cb7ff9"
 
 [dev-dependencies]
 rand = "0.4"
