@@ -5,7 +5,8 @@ authors = ["grippy <gmelton@gmail.com>"]
 edition = "2018"
 
 [dependencies.redis]
-git = "ssh://git@github.com/mitsuhiko/redis-rs.git"
+#git = "ssh://git@github.com/mitsuhiko/redis-rs.git"
+git = "https://github.com/mitsuhiko/redis-rs.git"
 rev = "1a6bf195ed21b84354b9237f720ab11967cb7ff9"
 
 [dev-dependencies]
