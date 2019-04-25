@@ -47,6 +47,7 @@ pub use types::{
     StreamKey,
     StreamMaxlen,
     StreamPendingCountReply,
+    StreamPendingData,
     StreamPendingReply,
     StreamRangeReply,
     StreamReadOptions,
